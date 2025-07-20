@@ -13,6 +13,7 @@ const Home = () => {
             <HeroPanel />
             <ResponseBox />
           </div>
+
           <motion.div
             initial={{
               y: 30,
@@ -25,7 +26,7 @@ const Home = () => {
                 duration: 0.5,
               },
             }}
-            className="text-center text-[16px] text-white/70 mt-10"
+            className="text-center text-[16px] text-white/70"
           >
             Built with 💀 by Abhinav
           </motion.div>
