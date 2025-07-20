@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import "tailwindcss";
+
+
+body{
+  overflow: hidden;
+  color: #fff;
+  user-select: none;
+}
+
+@theme{
+  --font-space: "Space Grotesk", sans-serif;
+  --color-green: #2e6757;
+  --color-green-200: #8bc5a1;
+  --color-cyan: #a5422f;
+  --color-cyan-200: #d56440
+}
