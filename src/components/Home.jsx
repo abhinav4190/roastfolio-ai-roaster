@@ -9,7 +9,7 @@ const Home = () => {
       <DotBackground>
         <div className="flex flex-col min-h-screen px-10 max-lg:px-5 ">
           <Navbar />
-          <div className="flex flex-col max-[400px]:h-[calc(100vh-500px)] flex-grow max-sm:mt-5 justify-center items-center gap-6">
+          <div className="flex flex-col flex-grow max-sm:mt-5 justify-center items-center gap-6">
             <HeroPanel />
             <ResponseBox />
           </div>
