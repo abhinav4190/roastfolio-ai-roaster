@@ -9,7 +9,7 @@ const Home = () => {
       <DotBackground>
         <div className="flex flex-col min-h-screen px-10 max-lg:px-5 ">
           <Navbar />
-          <div className="flex flex-col mt-30 max-[400px]:mt-20  justify-center items-center gap-6">
+          <div className="flex flex-col mt-35 max-[400px]:mt-20  justify-center items-center gap-6">
             <HeroPanel />
             <ResponseBox />
           </div>
@@ -26,7 +26,7 @@ const Home = () => {
                 duration: 0.5,
               },
             }}
-            className="text-center text-[16px] text-white/70 pb-5 mt-auto"
+            className="text-center text-[16px] text-white/70 pb-5 lg:mt-auto mt-30"
           >
             Built with 💀 by Abhinav
           </motion.div>
