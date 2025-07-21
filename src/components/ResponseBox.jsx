@@ -33,7 +33,7 @@ const ResponseBox = ({ response }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="relative mt-5 p-6 pb-10 mb-5 rounded-lg bg-white/5 border border-white/20 backdrop-blur-md text-white shadow-lg"
+          className="relative mt-5 p-6 pt-0 pb-10 mb-5 rounded-lg bg-white/5 border border-white/20 backdrop-blur-md text-white shadow-lg"
         >
           <p className="whitespace-pre-line text-base leading-relaxed">
             {typedText}

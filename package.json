@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "axios": "^1.10.0",
     "motion": "^12.23.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -26,5 +27,18 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "vite": "^7.0.4"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinav4190/roastfolio-ai-roaster.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhinav4190/roastfolio-ai-roaster/issues"
+  },
+  "homepage": "https://github.com/abhinav4190/roastfolio-ai-roaster#readme"
 }
