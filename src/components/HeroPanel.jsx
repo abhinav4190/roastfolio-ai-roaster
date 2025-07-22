@@ -29,7 +29,7 @@ const HeroPanel = () => {
       setError("");
       setRes("");
       const response = await axios.post(
-        "http://54.210.162.55:3000/api/roast",
+        "https://roastfolioapi.abhinav.chat/api/roast",
         {
           portfolioUrl: portfolioURL.trim(),
           roastLevel: roastLevel,
