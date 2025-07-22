@@ -29,7 +29,7 @@ const HeroPanel = () => {
       setError("");
       setRes("");
       const response = await axios.post(
-        "http://54.210.162.55:3000/api/roast",
+        "http://api.roastfolio.abhinav.chat:3000/api/roast",
         {
           portfolioUrl: portfolioURL.trim(),
           roastLevel: roastLevel,
@@ -177,7 +177,7 @@ const HeroPanel = () => {
               "Roast Me"
             )}
           </motion.button>
-          <ResponseBox response={res} />
+          <ResponseBox response={ res} />
         </motion.div>
       </div>
     </>
