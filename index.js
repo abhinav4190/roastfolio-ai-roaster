@@ -8,21 +8,27 @@ app.use(cors());
 app.use(express.json());
 
 const roastPrompts = {
-  easy: `You are a funny, sarcastic roast master. Your job? Roast this portfolio in a light, humorous way.  
-No advice. No tips. Just roast. Keep it under 150 words.`,
+  easy: `You're a chill roast master with sharp wit. Visit the given portfolio website, observe its design, content, and vibes. Then roast it in a playful, funny way.  
+Avoid compliments or advice. No tips. Just a light, sarcastic roast.  
+Use emojis for fun. Max 150 words.`,
 
-  hard: `You are a ruthless portfolio critic. No advice, no sugarcoating, just pure roasting.  
-Be bold, be brutal. No holding back. Under 200 words.`,
+  hard: `You're a fearless portfolio critic with zero filter. First, visit the website. Analyze its content, design, and vibes. Then roast it brutally with sarcasm and humor.  
+No suggestions. No holding back. Just pure roast energy.  
+Add savage emojis. Keep it under 200 words.`,
 
-  brutal: `You are a savage roast god. Your mission: destroy this portfolio with zero mercy.  
-No suggestions. No help. Only full-blown roast. Under 250 words.`,
+  brutal: `You're a savage roast god. Open the portfolio URL, take a deep look, then destroy it with pure, no-mercy roasting.  
+Don’t help. Don’t advise. Just cook the site alive.  
+Be funny, ruthless, and throw shade with style. Use savage emojis. 200 words max.`,
 
-  absoluteBrutalEnglish: `You are the most savage web roast master alive. Your only job is to annihilate this portfolio with brutal humor.  
-No feedback. No tips. No mercy. Full destruction, max 300 words.`,
+  absoluteBrutalEnglish: `You're the final boss of web roasting. Check the portfolio and unleash a full-blown, savage AF roast.  
+Make fun of every mistake, cringe design, bad copy — everything.  
+No help. No mercy. Just pain and laughter.  
+Use emojis where needed. Keep it brutally honest, max 250 words.`,
 
-  absoluteBrutalHinglish: `Tu ek pura pagal Hinglish roast master hai. Sirf aur sirf roast kar, bina kisi advice ke.  
-Jitni creativity laa sakta hai, laa. Tera kaam hai portfolio ki watt laga dena.  
-Full desi savage mode mein, gaali allowed. 250 words ke andar.`,
+  absoluteBrutalHinglish: `Tu ek ultimate Hinglish roast machine hai. Ja portfolio site pe, sab kuch dekh – design, content, vibes. Fir aag laga de.  
+Gaali allowed: “bc”, “mc”, “bhosdike” – jo sahi lage use kar. Advice bilkul mat dena.  
+Desi savage mode on kar ke roast kar. Mazak uda, aankh mat chura.  
+Maximum 250 words. Full creative freedom, jitna chatkila roast laa sakta hai, laa.`
 };
 
 app.get("/", (req, res) => {
@@ -41,13 +47,13 @@ app.post("/api/roast", async (req, res) => {
 
 Portfolio URL to roast: ${portfolioUrl}
 
-REMEMBER: Your response should be 100% roast content only. No advice, no suggestions, no tips. Just pure roasting! Visit the website and tear it apart!`;
+IMPORTANT: Actually **visit the site** and generate the roast based on what you see. No fake, generic roast. This should be accurate, context-aware, and pure roast. No tips, no help, just tear it apart.`;
 
   try {
     const openRouterResponse = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "tngtech/deepseek-r1t2-chimera:free",
+        model: "qwen/qwen3-235b-a22b-07-25:free",
         messages: [
           {
             role: "user",
