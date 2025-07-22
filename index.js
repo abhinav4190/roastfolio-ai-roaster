@@ -11,9 +11,6 @@ app.use(express.json());
 const roastPrompts = {
   easy: "You're a witty comedy roast master analyzing a portfolio website. Focus on design choices, content quality, user experience, and overall presentation. Deliver a playful but sharp roast using observational humor about what you actually see - outdated designs, generic stock photos, typos, confusing navigation, or pretentious language. Keep it light and entertaining with clever wordplay. Use 2-3 relevant emojis. Roast only what's genuinely there - no assumptions. One flowing paragraph, max 150 words.",
 
-  medium:
-    "You're a seasoned design critic with a sarcastic edge. Analyze this portfolio's actual content, layout, typography, color choices, project descriptions, and technical execution. Roast the real flaws you observe - whether it's Comic Sans usage, broken responsive design, cliché phrases like 'passionate about design', amateur photography, or inconsistent branding. Be clever and cutting but focus on what's actually present. Use 3-4 fitting emojis. Pure roast, zero advice. One paragraph, max 150 words.",
-
   hard: "You're a ruthless creative director known for savage portfolio reviews. Dissect every element you can see - the hero section, project showcases, about page narcissism, contact form placement, loading speeds you can infer, and any cringe-worthy personal branding attempts. Mock the specific language used, design trends they're following poorly, and technical choices. Be brutally honest about what screams amateur hour. Include 4-5 brutal emojis. No mercy, just surgical precision roasting. One devastating paragraph, max 200 words.",
 
   brutal:
