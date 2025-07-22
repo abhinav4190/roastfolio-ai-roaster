@@ -72,7 +72,8 @@ const HeroPanel = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-400 text-lg text-center"
         >
-          Forget feedback — this is designed to roast every mistake, flaw, and cringe detail it finds in your portfolio. No chill, just fire 🔥
+          Forget feedback — this is designed to roast every mistake, flaw, and
+          cringe detail it finds in your portfolio. No chill, just fire 🔥
         </motion.p>
         <motion.div
           initial="hidden"
@@ -176,7 +177,7 @@ const HeroPanel = () => {
               "Roast Me"
             )}
           </motion.button>
-          <ResponseBox response={`${res}` } />
+          <ResponseBox response={`${res}`} />
         </motion.div>
       </div>
     </>

@@ -6,7 +6,7 @@
 body{
   /* overflow: hidden; */
   color: #fff;
-  user-select: none;
+  /* user-select: none; */
 }
 
 @theme{
