@@ -20,7 +20,7 @@ const HeroPanel = () => {
     try {
       new URL(portfolioURL);
     } catch {
-      setError("Please enter a valid URL like: https://abhinav.chat");
+      setError("Please enter a valid URL like: https://example.com");
       return;
     }
 
