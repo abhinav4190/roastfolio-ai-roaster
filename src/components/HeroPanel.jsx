@@ -72,8 +72,7 @@ const HeroPanel = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-400 text-lg text-center"
         >
-          This roaster’s all in good fun — take the feedback, grow from it, and
-          remember your skills are way bigger than any AI roast 😤
+          Forget feedback — this is designed to roast every mistake, flaw, and cringe detail it finds in your portfolio. No chill, just fire 🔥
         </motion.p>
         <motion.div
           initial="hidden"
