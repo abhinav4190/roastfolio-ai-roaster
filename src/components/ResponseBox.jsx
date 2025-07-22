@@ -9,11 +9,12 @@ const ResponseBox = ({ response }) => {
   useEffect(() => {
     if (response) {
       setShowBox(true);
-      setTypedText("");
+      setTypedText(" ");
       setDoneTyping(false);
       let i = 0;
       const interval = setInterval(() => {
-        setTypedText((prev) => prev + response[i]);
+        setTypedText(response.substring(0, i + 1));
+
         i++;
         if (i === response.length) {
           clearInterval(interval);
@@ -40,14 +41,22 @@ const ResponseBox = ({ response }) => {
           </p>
 
           {doneTyping && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="absolute bottom-3 right-4 px-3 py-1 text-sm bg-cyan-200 hover:bg-cyan rounded-md text-white"
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                `My portfolio got roasted! 🔥\nDare to try with your portfolio?\n\n👉 roastfolio.abhinav.chat`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Share on X
-            </motion.button>
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="absolute bottom-3 right-4 px-3 py-1 text-sm bg-cyan-200 hover:bg-cyan rounded-md text-white"
+              >
+                Share on X
+              </motion.button>
+            </a>
           )}
         </motion.div>
       )}

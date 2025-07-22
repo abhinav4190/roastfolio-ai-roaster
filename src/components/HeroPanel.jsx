@@ -20,7 +20,7 @@ const HeroPanel = () => {
     try {
       new URL(portfolioURL);
     } catch {
-      setError("Please enter a valid URL like: https://example.com");
+      setError("Please enter a valid URL like: https://example.chat");
       return;
     }
 
@@ -177,7 +177,7 @@ const HeroPanel = () => {
               "Roast Me"
             )}
           </motion.button>
-          <ResponseBox response={ res} />
+          <ResponseBox response={`${res}` } />
         </motion.div>
       </div>
     </>
