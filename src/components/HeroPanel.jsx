@@ -118,10 +118,10 @@ const HeroPanel = () => {
               <option value="easy">Easy 🥴</option>
               <option value="hard">Hard 🤬</option>
               <option value="brutal">Brutal 😈</option>
-              <option value="absoluteBrutalEnglish">
+              <option value="absoluteBrutal">
                 Absolute Brutal English (18+) ⚠️
               </option>
-              <option value="absoluteBrutalHinglish">
+              <option value="hinglishBrutal">
                 Absolute Brutal Hinglish (18+) ⚠️
               </option>
             </select>
