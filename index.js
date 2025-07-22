@@ -99,7 +99,8 @@ ROASTING INSTRUCTIONS:
     const openRouterResponse = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "qwen/qwen3-235b-a22b-07-25:free",
+        // model: "qwen/qwen3-235b-a22b-07-25:free",
+         model: "google/gemini-2.0-flash-exp:free",
         messages: [
           {
             role: "user",
@@ -116,6 +117,7 @@ ROASTING INSTRUCTIONS:
         },
       }
     );
+    
     const choices = openRouterResponse.data.choices;
     if (!choices || choices.length === 0 || !choices[0].message?.content) {
       console.error(
@@ -135,6 +137,7 @@ ROASTING INSTRUCTIONS:
       roast: roastContent,
     });
   } catch (e) {
+
     console.error("Roast API Error:", e);
 
     console.error("Roast API Error:", e.message);
