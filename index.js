@@ -19,7 +19,8 @@ const roastPrompts = {
   absoluteBrutal:
     "You're the final boss of portfolio destruction. This is a complete creative execution - analyze EVERYTHING visible and roast with surgical precision and zero filter. Mock their design philosophy, project quality, writing skills, personal branding disasters, technical incompetence, and any laughable attempts at professionalism. Reference specific content, not generic criticisms. Destroy their confidence with sharp observations about what's actually there. Be hilariously savage but intelligent. 6+ devastating emojis. One paragraph of pure annihilation, max 200 words.",
 
- hinglishBrutal: "Tu ek ultimate Hinglish roast machine hai! Is portfolio ko dekh ke jo bhi bakwaas dikh raha hai - usko full tabaah kar de. Sirf Hindi words use kar jo English mein likhe hue hain (like 'kya bakwaas hai', 'kitna ghatiya design hai', 'bilkul bekar lagta hai'). English words bilkul use mat kar except for technical terms. Jo actual content site pe hai - generic templates, third-class projects, wannabe professional language - sab ko Hindi mein savage roast kar. Desi humor full on, thoda gaali bhi allowed (bc, mc, bhosdike). Hindi sentences banaa, bas English script mein likh. Emojis bhi daal jahan zaroori lage. Ek hi paragraph mein pura destruction, max 150 words. Koi advice nahi, sirf pure Hindi roast!"
+  hinglishBrutal:
+    "Tu ek ultimate Hinglish roast machine hai! Is portfolio ko dekh ke jo bhi bakwaas dikh raha hai - usko full tabaah kar de. Sirf Hindi words use kar jo English mein likhe hue hain (like 'kya bakwaas hai', 'kitna ghatiya design hai', 'bilkul bekar lagta hai'). English words bilkul use mat kar except for technical terms. Jo actual content site pe hai - generic templates, third-class projects, wannabe professional language - sab ko Hindi mein savage roast kar. Desi humor full on, thoda gaali bhi allowed (bc, mc, bhosdike). Hindi sentences banaa, bas English script mein likh. Emojis bhi daal jahan zaroori lage. Ek hi paragraph mein pura destruction, max 150 words. Koi advice nahi, sirf pure Hindi roast!",
 };
 
 const scrapeMultiplePages = async (baseUrl) => {
@@ -75,7 +76,7 @@ app.post("/api/roast", async (req, res) => {
     });
   }
   const systemPrompt = roastPrompts[roastLevel];
-  console.log(systemPrompt);
+
   const scrapedContent = await scrapeMultiplePages(portfolioUrl);
   const userMessage = `${systemPrompt}
 
@@ -89,6 +90,7 @@ ROASTING INSTRUCTIONS:
 - Be observational and clever, not random or mean-spirited
 - Use humor that comes from what's genuinely there
 - One flowing paragraph only - no line breaks, no \\n characters, no formatting
+- Don't use any formatting like asterisks around words
 - Stay within 200 words
 - No advice, suggestions, or constructive criticism
 - Pure roast based on what you actually observe`;
@@ -114,12 +116,27 @@ ROASTING INSTRUCTIONS:
         },
       }
     );
-    const roastContent = openRouterResponse.data.choices[0].message.content;
+    const choices = openRouterResponse.data.choices;
+    if (!choices || choices.length === 0 || !choices[0].message?.content) {
+      console.error(
+        "Invalid response format from OpenRouter:",
+        openRouterResponse.data
+      );
+      return res.status(500).json({
+        success: false,
+        error: "Model did not return a valid response. Try again later.",
+      });
+    }
+
+    const roastContent = choices[0].message.content;
+
     res.json({
       success: true,
       roast: roastContent,
     });
   } catch (e) {
+    console.error("Roast API Error:", e);
+
     console.error("Roast API Error:", e.message);
 
     res.status(500).json({
