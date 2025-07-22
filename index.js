@@ -99,8 +99,8 @@ ROASTING INSTRUCTIONS:
     const openRouterResponse = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        // model: "qwen/qwen3-235b-a22b-07-25:free",
-         model: "google/gemini-2.0-flash-exp:free",
+        model: "qwen/qwen3-235b-a22b-07-25:free",
+        //  model: "google/gemini-2.0-flash-exp:free",
         messages: [
           {
             role: "user",
