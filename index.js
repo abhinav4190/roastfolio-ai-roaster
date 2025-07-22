@@ -79,7 +79,7 @@ app.post("/api/roast", async (req, res) => {
 
   const scrapedContent = await scrapeMultiplePages(portfolioUrl);
   const userMessage = `${systemPrompt}
-
+The current year is 2025. So if the portfolio mentions dates like '2025'  — that's normal and not futuristic. Do not roast based on valid current-year references.
 PORTFOLIO CONTENT TO ANALYZE:
 ${scrapedContent}
 
